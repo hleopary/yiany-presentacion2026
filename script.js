@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Definir las imágenes locales para el carrusel.
     // Asegúrate de que estas rutas coincidan con tus archivos en la carpeta /assets.
     const triangleModels = [
-        'assets/triangulo-1.png', // Modelo regular
-        'assets/triangulo-2.png', // Modelo modificado
-        'assets/triangulo-3.png'  // Modelo deformado
+        'assets/triangulo-1.svg', // Modelo regular
+        'assets/triangulo-2.svg', // Modelo modificado
+        'assets/triangulo-3.svg'  // Modelo deformado
     ];
 
     const triangleImage = document.getElementById('triangle-image');
