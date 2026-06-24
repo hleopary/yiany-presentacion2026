@@ -1,0 +1,114 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background-color:#f4f4f4;
+}
+
+
+
+.titulolindo {
+  font-family: "Tagesschrift", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80px;
+
+}
+
+header{
+    background: linear-gradient(90deg,#A4CE8B,#F7E49B);
+    color: #BA5A5A;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.cajitaindice {
+margin-left: 0px;
+margin-right: 230px;
+
+
+}
+.indice{
+    background-color: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    width: 230px;
+    margin-right: 60px;
+    margin-top: 10px;
+   
+}
+
+.indice ul{
+    list-style: none;
+    padding: 0;
+}
+
+.indice li{
+    margin: 10px 0;
+}
+
+.indice a{
+    color: white;
+    text-decoration: none;
+}
+
+.titulo{
+    flex: 1;
+    text-align: center;
+}
+
+
+
+header h1{
+    margin-bottom:10px;
+
+}
+
+.contenedor{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+    padding:40px;
+}
+
+.tarjeta{
+    background:white;
+    width:300px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    transition:transform 0.3s;
+}
+
+.tarjeta:hover{
+    transform:translateY(-8px);
+}
+
+.tarjeta img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.tarjeta h2{
+    color:#0077ff;
+    padding:15px;
+}
+
+.tarjeta p{
+    padding:0 15px 20px;
+    color:#555;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
