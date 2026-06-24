@@ -70,4 +70,29 @@ Este documento registra el proceso de creación de la página web interactiva pa
     2.  **Actualización de Recursos:**
         *   Se actualizaron las rutas de las imágenes en `script.js` para que apunten a los archivos locales dentro de la carpeta `assets/`.
     3.  **Guía de Despliegue:**
-        *   Se proporcionó un manual paso a paso para subir el proyecto a un repositorio de GitHub y activar GitHub Pages, generando un enlace público para la presentación.
+        *   Se proporcionó un manual paso a paso para subir el projecto a un repositorio de GitHub y activar GitHub Pages, generando un enlace público para la presentación.
+
+---
+
+### **Entrada 5: Fase 5 (Generación de Imágenes y Mejora Visual)**
+
+*   **Fecha:** 24 de Junio de 2026
+*   **Responsable:** Asistente de IA (Gemini Code Assist)
+*   **Descripción:**
+    A petición del usuario, se generaron las imágenes faltantes y se mejoró el aspecto visual general de la página para que pareciera "perfecta".
+
+*   **Acciones Realizadas:**
+    1.  **Generación de Imágenes SVG para el "Triángulo de Sabato":**
+        *   Se creó un directorio `assets`.
+        *   Se generaron tres archivos SVG (`triangulo-1.svg`, `triangulo-2.svg`, `triangulo-3.svg`) que representan los diferentes modelos del Triángulo de Sabato, basados en los bocetos dibujados a mano por el usuario.
+        *   Se actualizó `script.js` para utilizar los nuevos archivos `.svg` en lugar de los marcadores de posición `.png` anteriores.
+        *   Se actualizó `index.html` para mostrar el primer modelo SVG por defecto.
+    2.  **Colocación de Imágenes para Otras Secciones:**
+        *   Se modificó la sección "Tecnologías" a un diseño de cuadrícula de dos columnas, añadiendo imágenes de marcador de posición de `source.unsplash.com` para cada tecnología (SAOCOM, HB4, Biocombustibles, Tayná).
+        *   Se añadió una imagen de cabecera a la sección "Entrevista", también utilizando `source.unsplash.com`.
+    3.  **Mejora Visual con CSS:**
+        *   Se creó un nuevo archivo `style.css`.
+        *   Se importó una nueva fuente (`Inter`) para una mejor tipografía.
+        *   Se añadió una imagen de fondo a la cabecera principal con una superposición oscura para mejorar la legibilidad del texto.
+        *   Se añadieron efectos "hover" a los enlaces de la barra lateral.
+        *   Se enlazó el archivo `style.css` a `index.html`.
