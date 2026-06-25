@@ -1,17 +1,18 @@
 /* =========================================
    1. VARIABLES DE DISEÑO (Design System)
 ========================================= */
+/* --- Paso 1: Paleta de colores y tipografía renovadas --- */
 :root {
-    /* Colores extraídos del diseño original */
-    --color-fondo-crema: #fcf6db;
-    --color-negro: #000000;
-    --color-blanco: #ffffff;
-    --color-menta: #98e8cd;
-    --color-azul-oscuro: #042a5a;
-    --color-rosa-claro: #e1a9f0;
+    /* Paleta de Colores Profesional */
+    --color-primario: #0D6EFD; /* Azul moderno para acentos */
+    --color-fondo-light: #F8F9FA; /* Gris muy claro, casi blanco */
+    --color-fondo-dark: #212529;  /* Gris oscuro para fondos (reemplaza negro) */
+    --color-texto-principal: #343A40; /* Gris oscuro para texto principal */
+    --color-texto-secundario: #6C757D; /* Gris medio para texto secundario */
+    --color-blanco: #FFFFFF;
 
     /* Tipografías */
-    --font-titulos: 'Orbitron', sans-serif;
+    --font-titulos: 'Lora', serif; /* Fuente Serif para un look editorial */
     --font-texto: 'Open Sans', sans-serif;
 }
 
@@ -30,8 +31,8 @@ html {
 
 body {
     font-family: var(--font-texto);
-    background-color: var(--color-fondo-crema);
-    color: var(--color-negro);
+    background-color: var(--color-fondo-light);
+    color: var(--color-texto-principal);
     line-height: 1.6;
 }
 
@@ -51,25 +52,13 @@ ul {
 
 /* Clases de colores comunes */
 .seccion-clara {
-    background-color: var(--color-fondo-crema);
+    background-color: var(--color-fondo-light);
     padding: 4rem 2rem;
 }
 
 .titulo-azul {
-    color: var(--color-azul-oscuro);
+    color: var(--color-texto-principal);
     text-align: center;
-}
-
-.texto-menta {
-    color: var(--color-menta);
-}
-
-.texto-azul {
-    color: var(--color-azul-oscuro);
-}
-
-.texto-rosa {
-    color: var(--color-rosa-claro);
 }
 
 /* (A partir de acá agregaremos en el próximo paso el código de Flexbox y Grid para maquetar) */
@@ -77,64 +66,59 @@ ul {
    FASE 4: MAQUETACIÓN POR SECCIONES
 ========================================= */
 
-/* --- SECCIÓN 1: Hero e Índice (Pantalla dividida) --- */
-.split-screen {
-    display: flex;
-    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
-}
-
-.indice-container {
-    flex: 1; /* Ocupa 1 parte del ancho */
-    background-color: var(--color-fondo-crema);
-    padding: 10% 5%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.indice-container h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.indice-container ul {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-}
-
-.indice-container a {
-    color: var(--color-menta);
-    font-size: 2rem;
-    transition: color 0.3s ease;
-}
-
-.indice-container a:hover {
-    color: var(--color-azul-oscuro);
-}
-
-.titulo-container {
-    flex: 2.5; /* Ocupa 2.5 partes del ancho (es más ancho que el índice) */
-    background-color: var(--color-negro);
+/* --- SECCIÓN 1: Hero --- */
+#hero {
+    background-color: var(--color-fondo-dark);
     color: var(--color-blanco);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 5%;
+    padding: 6rem 2rem;
+    min-height: 60vh;
 }
 
-.titulo-container h1 {
-    font-size: 6rem;
+.hero-content h1 {
+    font-size: clamp(3rem, 8vw, 6rem); /* Tamaño de fuente adaptable */
     line-height: 1.1;
     margin-bottom: 2rem;
     letter-spacing: 2px;
 }
 
-.titulo-container p {
-    font-size: 2.5rem;
-    font-family: var(--font-titulos); /* Usamos la fuente futurista para el subtítulo también */
+.hero-content p {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-family: var(--font-titulos);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Barra de Navegación --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-fondo-light);
+    border-bottom: 1px solid #dee2e6;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+}
+
+.navbar a {
+    display: block;
+    padding: 1rem;
+    color: var(--color-texto-secundario);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: var(--color-primario);
 }
 
 /* --- SECCIÓN 2: Triángulo de Sabato --- */
@@ -156,7 +140,7 @@ ul {
 }
 
 .triangulo-item {
-    border: 3px solid var(--color-menta);
+    border: 2px solid #dee2e6; /* Borde más sutil */
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -191,13 +175,14 @@ ul {
     font-size: 3rem; /* Hace la flecha más grande */
 }
 
-#relaciones .texto-azul {
+#relaciones p:first-of-type {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-#relaciones .texto-menta {
-    font-size: 1.5rem;
+#relaciones p:last-of-type {
+    font-size: 1.2rem;
+    color: var(--color-texto-secundario);
 }
 
 /* --- SECCIÓN 4: Tecnología / Satélite --- */
@@ -212,12 +197,18 @@ ul {
 
 .card-satelite {
     display: flex;
-    background-color: var(--color-fondo-crema);
+    background-color: var(--color-blanco);
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
     gap: 3rem;
     align-items: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.card-satelite[data-modal-trigger]:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .img-satelite {
@@ -228,19 +219,20 @@ ul {
 
 .info-satelite h3 {
     font-size: 2rem;
-    color: var(--color-azul-oscuro);
+    color: var(--color-texto-principal);
     margin-bottom: 1.5rem;
 }
 
 .info-satelite p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    color: var(--color-azul-oscuro);
+    color: var(--color-texto-secundario);
 }
 
-.info-satelite .texto-rosa {
-    font-size: 1.2rem;
+.info-satelite p.contrapunto {
+    font-size: 1.1rem;
     margin-bottom: 0;
+    color: #d9534f; /* Un rojo sutil para el contrapunto */
 }
 
 /* --- SECCIÓN 5: Entrevista --- */
@@ -263,7 +255,7 @@ ul {
 }
 
 .caja-negra {
-    background-color: var(--color-negro);
+    background-color: var(--color-fondo-dark);
     color: var(--color-blanco);
     padding: 3rem;
     flex: 1; /* Ocupa la mitad del espacio disponible */
@@ -294,13 +286,13 @@ footer {
 }
 
 footer h3 {
-    background-color: var(--color-fondo-crema);
+    background-color: var(--color-fondo-light);
     padding-top: 4rem;
     font-size: 2rem;
 }
 
 footer p:nth-of-type(1) {
-    background-color: var(--color-fondo-crema);
+    background-color: var(--color-fondo-light);
     padding-bottom: 4rem;
     font-family: var(--font-titulos);
     font-size: 1.5rem;
@@ -325,7 +317,7 @@ footer p:nth-of-type(2) {
 /* --- Adaptación para Tablets (Pantallas medianas) --- */
 @media (max-width: 992px) {
     .grid-triangulos {
-        grid-template-columns: repeat(2, 1fr); /* Pasa de 3 a 2 columnas */
+        grid-template-columns: 1fr; /* Pasa a 1 columna antes */
     }
     
     .titulo-container h1 {
@@ -340,31 +332,10 @@ footer p:nth-of-type(2) {
 /* --- Adaptación para Celulares (Pantallas chicas) --- */
 @media (max-width: 768px) {
     
-    /* 1. Hero: Pasa de lado a lado a arriba y abajo */
-    .split-screen {
-        flex-direction: column;
-    }
-    
-    .indice-container {
-        padding: 3rem 2rem;
-        align-items: center; /* Centramos el índice en móviles */
-        text-align: center;
-    }
-    
-    .indice-container ul {
-        align-items: center;
-    }
-    
-    .titulo-container {
-        padding: 4rem 2rem;
-    }
-
-    .titulo-container h1 {
-        font-size: 3.5rem;
-    }
-    
-    .titulo-container p {
-        font-size: 1.5rem;
+    /* 1. Navegación en móviles */
+    .navbar ul {
+        gap: 0.5rem;
+        justify-content: space-around;
     }
     
     /* 2. Triángulos: 1 sola columna */
@@ -408,5 +379,100 @@ footer p:nth-of-type(2) {
     
     #entrevista h2, #tecnologia h2, #triangulo .titulo-azul {
         font-size: 2.2rem;
+    }
+}
+
+/* =========================================
+   FASE 6: ANIMACIONES
+========================================= */
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   FASE 7: MODAL
+========================================= */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.is-visible .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-texto-secundario);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-content img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.modal-info h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-info p {
+    font-size: 1.1rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        max-height: 90vh;
+        overflow-y: auto;
     }
 }
