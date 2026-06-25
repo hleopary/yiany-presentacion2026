@@ -1,0 +1,412 @@
+/* =========================================
+   1. VARIABLES DE DISEÑO (Design System)
+========================================= */
+:root {
+    /* Colores extraídos del diseño original */
+    --color-fondo-crema: #fcf6db;
+    --color-negro: #000000;
+    --color-blanco: #ffffff;
+    --color-menta: #98e8cd;
+    --color-azul-oscuro: #042a5a;
+    --color-rosa-claro: #e1a9f0;
+
+    /* Tipografías */
+    --font-titulos: 'Orbitron', sans-serif;
+    --font-texto: 'Open Sans', sans-serif;
+}
+
+/* =========================================
+   2. RESET Y ESTILOS BASE
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Efecto de deslizamiento suave en el índice */
+}
+
+body {
+    font-family: var(--font-texto);
+    background-color: var(--color-fondo-crema);
+    color: var(--color-negro);
+    line-height: 1.6;
+}
+
+/* Utilidades tipográficas globales */
+h1, h2, h3, h4, .titulo-azul, .flecha-texto {
+    font-family: var(--font-titulos);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Clases de colores comunes */
+.seccion-clara {
+    background-color: var(--color-fondo-crema);
+    padding: 4rem 2rem;
+}
+
+.titulo-azul {
+    color: var(--color-azul-oscuro);
+    text-align: center;
+}
+
+.texto-menta {
+    color: var(--color-menta);
+}
+
+.texto-azul {
+    color: var(--color-azul-oscuro);
+}
+
+.texto-rosa {
+    color: var(--color-rosa-claro);
+}
+
+/* (A partir de acá agregaremos en el próximo paso el código de Flexbox y Grid para maquetar) */
+/* =========================================
+   FASE 4: MAQUETACIÓN POR SECCIONES
+========================================= */
+
+/* --- SECCIÓN 1: Hero e Índice (Pantalla dividida) --- */
+.split-screen {
+    display: flex;
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+.indice-container {
+    flex: 1; /* Ocupa 1 parte del ancho */
+    background-color: var(--color-fondo-crema);
+    padding: 10% 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.indice-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.indice-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.indice-container a {
+    color: var(--color-menta);
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+.indice-container a:hover {
+    color: var(--color-azul-oscuro);
+}
+
+.titulo-container {
+    flex: 2.5; /* Ocupa 2.5 partes del ancho (es más ancho que el índice) */
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5%;
+}
+
+.titulo-container h1 {
+    font-size: 6rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.titulo-container p {
+    font-size: 2.5rem;
+    font-family: var(--font-titulos); /* Usamos la fuente futurista para el subtítulo también */
+}
+
+/* --- SECCIÓN 2: Triángulo de Sabato --- */
+#triangulo {
+    background-color: var(--color-blanco);
+}
+
+#triangulo .titulo-azul {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+.grid-triangulos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.triangulo-item {
+    border: 3px solid var(--color-menta);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.triangulo-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- SECCIÓN 3: Relaciones --- */
+#relaciones {
+    background-color: var(--color-blanco);
+    text-align: center;
+}
+
+.relacion-bloque {
+    margin-bottom: 5rem;
+}
+
+.flecha-texto {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flecha-texto span {
+    font-size: 3rem; /* Hace la flecha más grande */
+}
+
+#relaciones .texto-azul {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#relaciones .texto-menta {
+    font-size: 1.5rem;
+}
+
+/* --- SECCIÓN 4: Tecnología / Satélite --- */
+#tecnologia {
+    background-color: var(--color-blanco);
+}
+
+#tecnologia h2 {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+}
+
+.card-satelite {
+    display: flex;
+    background-color: var(--color-fondo-crema);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 3rem;
+    align-items: center;
+}
+
+.img-satelite {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+}
+
+.info-satelite h3 {
+    font-size: 2rem;
+    color: var(--color-azul-oscuro);
+    margin-bottom: 1.5rem;
+}
+
+.info-satelite p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-azul-oscuro);
+}
+
+.info-satelite .texto-rosa {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+/* --- SECCIÓN 5: Entrevista --- */
+#entrevista {
+    background-color: var(--color-fondo-crema);
+}
+
+#entrevista h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.layout-asimetrico {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    gap: 3rem;
+    align-items: center;
+}
+
+.caja-negra {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    padding: 3rem;
+    flex: 1; /* Ocupa la mitad del espacio disponible */
+    font-size: 1.3rem;
+}
+
+.caja-negra p {
+    margin-bottom: 1.5rem;
+}
+
+.texto-derecha {
+    flex: 1; /* Ocupa la otra mitad */
+    font-size: 1.3rem;
+}
+
+.texto-inferior {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+}
+
+footer h3 {
+    background-color: var(--color-fondo-crema);
+    padding-top: 4rem;
+    font-size: 2rem;
+}
+
+footer p:nth-of-type(1) {
+    background-color: var(--color-fondo-crema);
+    padding-bottom: 4rem;
+    font-family: var(--font-titulos);
+    font-size: 1.5rem;
+}
+
+footer h4 {
+    background-color: var(--color-blanco);
+    padding-top: 3rem;
+    font-size: 1.5rem;
+}
+
+footer p:nth-of-type(2) {
+    background-color: var(--color-blanco);
+    padding-bottom: 3rem;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   FASE 5: RESPONSIVE WEB DESIGN (Tablets y Móviles)
+========================================= */
+
+/* --- Adaptación para Tablets (Pantallas medianas) --- */
+@media (max-width: 992px) {
+    .grid-triangulos {
+        grid-template-columns: repeat(2, 1fr); /* Pasa de 3 a 2 columnas */
+    }
+    
+    .titulo-container h1 {
+        font-size: 4.5rem; /* Achicamos un poco el título gigante */
+    }
+    
+    .card-satelite {
+        gap: 1.5rem;
+    }
+}
+
+/* --- Adaptación para Celulares (Pantallas chicas) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Hero: Pasa de lado a lado a arriba y abajo */
+    .split-screen {
+        flex-direction: column;
+    }
+    
+    .indice-container {
+        padding: 3rem 2rem;
+        align-items: center; /* Centramos el índice en móviles */
+        text-align: center;
+    }
+    
+    .indice-container ul {
+        align-items: center;
+    }
+    
+    .titulo-container {
+        padding: 4rem 2rem;
+    }
+
+    .titulo-container h1 {
+        font-size: 3.5rem;
+    }
+    
+    .titulo-container p {
+        font-size: 1.5rem;
+    }
+    
+    /* 2. Triángulos: 1 sola columna */
+    .grid-triangulos {
+        grid-template-columns: 1fr; 
+    }
+    
+    /* 3. Relaciones: Ajuste de textos y rotación de flecha */
+    .flecha-texto {
+        font-size: 1.2rem;
+        flex-direction: column; /* Apilamos el texto y la flecha */
+        gap: 0.5rem;
+    }
+    
+    .flecha-texto span {
+        transform: rotate(90deg); /* Ponemos la flecha en vertical */
+    }
+    
+    /* 4. Satélite: Imagen arriba, texto abajo */
+    .card-satelite {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    /* 5. Entrevista: Cajas apiladas */
+    .layout-asimetrico {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .caja-negra, .texto-derecha {
+        width: 100%;
+        padding: 2rem;
+    }
+    
+    /* Ajustes tipográficos generales para que no desborden */
+    .seccion-clara {
+        padding: 3rem 1.5rem;
+    }
+    
+    #entrevista h2, #tecnologia h2, #triangulo .titulo-azul {
+        font-size: 2.2rem;
+    }
+}
