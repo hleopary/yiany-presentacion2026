@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Rol del Estado en Ciencia y Tecnología</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilo para que el scroll-padding-top funcione bien con el header fijo si lo hubiera */
+        :target {
+            scroll-margin-top: 5rem; /* Ajusta este valor si es necesario */
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="flex min-h-screen">
+        <!-- Menú Lateral (Sidebar) -->
+        <aside id="sidebar" class="w-64 bg-gray-800 text-white p-6 fixed h-full transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out z-30">
+            <h2 class="text-2xl font-bold mb-8">Índice</h2>
+            <nav>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#sabato" class="sidebar-link block hover:text-sky-300">Triángulo de Sabato</a>
+                    </li>
+                    <li>
+                        <a href="#tecnologias" class="sidebar-link block hover:text-sky-300">Tecnologías</a>
+                    </li>
+                    <li>
+                        <a href="#entrevista" class="sidebar-link block hover:text-sky-300">Entrevista</a>
+                    </li>
+                    <li>
+                        <a href="#cierre" class="sidebar-link block hover:text-sky-300">Cierre</a>
+                    </li>
+                     <li>
+                        <a href="./yiany_tecnologias/paginawebtecnologias_1.html" class="sidebar-link block hover:text-sky-300">Página web tecnologías 1</a>
+                    </li>
+                                         <li>
+                        <a href="./yiany_tecnologias/paginawebtecnologias_2.html" class="sidebar-link block hover:text-sky-300">Página web tecnologías 2</a>
+                    </li>
+                    </li>
+                    <li>
+                        <a href="./yiany_tecnologias/Yiany6.html" class="sidebar-link block hover:text-sky-300">yiany 6</a>
+                    </li>
+                    <li>
+                        <a href="./yiany_tecnologias/Yiany7.html" class="sidebar-link block hover:text-sky-300">yiany 7</a>
+                    </li>
+                    <li>
+                        <a href="./yiany_tecnologias/Yiany8.html" class="sidebar-link block hover:text-sky-300">yiany 8</a>
+                    </li>
+                </ul>
+
+            </nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="md:ml-64 flex-1 transition-all duration-300 ease-in-out">
+            
+            <!-- Botón de Menú Móvil -->
+            <div class="md:hidden mb-4 p-4">
+                <button id="menu-btn" class="p-2 rounded-md bg-gray-800 text-white z-40">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Encabezado -->
+            <header id="header" class="mb-12 p-8 md:p-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold">EL ROL DEL ESTADO</h1>
+                <p class="text-xl mt-2">desde el punto de vista Científico-Tecnológico.</p>
+                <p class="text-sm mt-4">Autor: Yiany Suriel</p>
+            </header>
+
+            <div class="p-8 md:p-12">
+
+            <!-- SECCIÓN 1: TRIÁNGULO DE SABATO -->
+            <section id="sabato" class="mb-24">
+                <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-sky-500 pb-2 mb-6">
+                    ¿Cuál es el triángulo de Sabato hoy en día?
+                </h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Columna Izquierda: Carrusel y Modelo -->
+                    <div class="bg-gray-100 rounded-lg p-6 flex flex-col items-center justify-center min-h-[400px]">
+                        <img id="triangle-image" src="assets/triangulo-1b.jpeg" alt="Representación del Triángulo de Sabato" class="max-w-full h-auto rounded-md mb-4">
+                        <button id="next-model-btn" class="bg-sky-600 text-white font-bold py-2 px-4 rounded hover:bg-sky-700 transition-colors">
+                            Siguiente Modelo
+                        </button>
+                        <p class="text-sm text-gray-500 mt-2">Placeholder para el carrusel de imágenes.</p>
+                    </div>
+
+                    <!-- Columna Derecha: Dinámica de Relaciones -->
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">E (Estado) &lt;---&gt; C.T. (Ciencia y Tecnología)</h3>
+                            <p class="text-gray-600 mt-2">Orientación de la demanda y financiamiento de la ciencia básica.</p>
+                            <button class="mt-3 text-sm font-semibold text-sky-600 hover:text-sky-800" onclick="toggleVisibility('info-sabato-1')">
+                                ¿Qué pasa si se regula sin escuchar?
+                            </button>
+                            <div id="info-sabato-1" class="hidden mt-2 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded-r-lg">
+                                <p class="font-bold">Leyes inviables o desactualizadas</p>
+                                <p>Se crean leyes que no se corresponden con el estado del arte tecnológico.</p>
+                            </div>
+                        </div>
+                        <div class="border-t pt-6">
+                            <h3 class="text-xl font-bold text-gray-800">S (Sector Productivo) &lt;---&gt; E (Estado)</h3>
+                            <p class="text-gray-600 mt-2">Transferencia Tecnológica, defensa de la competencia y normas de calidad.</p>
+                            <button class="mt-3 text-sm font-semibold text-sky-600 hover:text-sky-800" onclick="toggleVisibility('info-sabato-2')">
+                                ¿Qué pasa si se regula sin escuchar?
+                            </button>
+                            <div id="info-sabato-2" class="hidden mt-2 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded-r-lg">
+                                <p class="font-bold">Normativas burocráticas</p>
+                                <p>Se ahuyentan las inversiones o se fomenta la informalidad tecnológica.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 2: CIENTÍFICO - TECNOLÓGICO -->
+            <section id="tecnologias" class="mb-24">
+                <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-sky-500 pb-2 mb-6">
+                    Tecnologías del CONICET y sus consecuencias
+                </h2>
+                <div class="space-y-12">
+                    <!-- Tecnología 1: SAOCOM -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center bg-white p-6 rounded-2xl shadow-md border border-gray-200">
+                        <div class="md:col-span-2">
+                            <img src="assets/saocom.jpg" alt="Satélite SAOCOM" class="rounded-lg object-cover w-full h-full">
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-xl font-bold text-sky-800">Satélite SAOCOM</h3>
+                            <p class="mt-2 text-gray-700">Misión satelital con radar que permite obtener información clave sobre humedad del suelo, monitoreo de inundaciones, incendios y gestión de cultivos. Vital para el agro y la gestión del cambio climático.</p>
+                            <p class="mt-3 text-sm text-red-600"><span class="font-bold">Consecuencia:</span> La alta inversión compite con otras prioridades críticas como salud o educación.</p>
+                        </div>
+                    </div>
+                    <!-- Tecnología 2: HB4 -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center bg-white p-6 rounded-2xl shadow-md border border-gray-200">
+                        <div class="md:col-span-2">
+                            <img src="assets/hb4.jpg" alt="Trigo y Soja HB4" class="rounded-lg object-cover w-full h-full">
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-xl font-bold text-sky-800">Trigo y Soja HB4 (Tolerancia a la Sequía)</h3>
+                            <p class="mt-2 text-gray-700">Evento transgénico que permite a los cultivos sobrevivir y mantener la productividad en condiciones de estrés hídrico extremo. Un hito global desarrollado junto a la UNL y Bioceres.</p>
+                            <p class="mt-3 text-sm text-red-600"><span class="font-bold">Consecuencia:</span> Organizaciones ambientales advierten que podría incrementar el uso de agroquímicos y acelerar la deforestación.</p>
+                        </div>
+                    </div>
+                    <!-- Tecnología 3: Biocombustibles 2G -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center bg-white p-6 rounded-2xl shadow-md border border-gray-200">
+                        <div class="md:col-span-2">
+                            <img src="assets/biocombustibles.jpg" alt="Biocombustibles de Segunda Generación" class="rounded-lg object-cover w-full h-full">
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-xl font-bold text-sky-800">Biocombustibles de Segunda Generación</h3>
+                            <p class="mt-2 text-gray-700">Tecnologías para producir bioetanol a partir de residuos agrícolas no alimentarios (rastrojos, bagazo). Avanza hacia una matriz energética más limpia sin competir con la producción de alimentos.</p>
+                            <p class="mt-3 text-sm text-red-600"><span class="font-bold">Consecuencia:</span> La recolección masiva de rastrojos puede provocar erosión y pérdida de nutrientes del suelo, obligando a usar más fertilizantes.</p>
+                        </div>
+                    </div>
+                    <!-- Tecnología 4: Tayná -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center bg-white p-6 rounded-2xl shadow-md border border-gray-200">
+                        <div class="md:col-span-2">
+                            <img src="assets/tayna.jpg" alt="Computadora Cuántica Tayná" class="rounded-lg object-cover w-full h-full">
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-xl font-bold text-sky-800">Tayná (Computadora Cuántica Nacional)</h3>
+                            <p class="mt-2 text-gray-700">Iniciativa para desarrollar una computadora cuántica con qubits superconductores. Es una inversión estratégica en soberanía científica en un campo dominado por gigantes tecnológicos.</p>
+                            <p class="mt-3 text-sm text-red-600"><span class="font-bold">Consecuencia:</span> Riesgo de "fuga de cerebros", ya que los profesionales altamente calificados podrían migrar al no existir aún un mercado laboral local para estas habilidades.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tecnología 5: Beeflow (Entrenamiento de Abejas) -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center bg-white p-6 rounded-2xl shadow-md border border-gray-200">
+                        <div class="md:col-span-2">
+                            <img src="assets/biocombustibles.jpg" alt="Entrenamiento de abejas para polinización" class="rounded-lg object-cover w-full h-full">
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-xl font-bold text-sky-800">Beeflow (Entrenamiento de Abejas)</h3>
+                            <p class="mt-2 text-gray-700">Una de las startups nacidas de patentes del CONICET con mayor proyección internacional. Desarrollaron una tecnología que consiste en alimentar a las abejas con moléculas orgánicas específicas para "entrenar" su memoria olfativa, logrando que polinicen cultivos específicos y aumentando el rendimiento de frutas y alimentos hasta un 90%.</p>
+                            <p class="mt-3 text-sm text-red-600"><span class="font-bold">Consecuencia:</span> Al enfocarse en cultivos específicos, las abejas podrían ignorar flores silvestres locales, alterando la dinámica natural de la flora autóctona del ecosistema.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tecnología 6: Aislantes Termoacústicos Ecológicos -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center bg-white p-6 rounded-2xl shadow-md border border-gray-200">
+                        <div class="md:col-span-2">
+                            <img src="assets/biocombustibles.jpg" alt="Paneles aislantes hechos con residuos de vino" class="rounded-lg object-cover w-full h-full">
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-xl font-bold text-sky-800">Aislantes Termoacústicos Ecológicos</h3>
+                            <p class="mt-2 text-gray-700">Desarrollos patentados que reciclan los residuos vitivinícolas (desechos de la producción de vino) para crear paneles aislantes de alta eficiencia energética para la construcción sostenible, agregando valor a un desecho industrial.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 3: ENTREVISTA -->
+            <section id="entrevista" class="mb-24">
+                <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-sky-500 pb-2 mb-6">
+                    Entrevista: Tecnología y Políticas Públicas
+                </h2>
+                <div class="mb-8">
+                    <img src="assets/entrevista.jpg" alt="Entrevista" class="rounded-lg object-cover w-full h-48 md:h-64">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Tarjeta 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h4 class="font-bold text-gray-800">¿Cómo retornan a la sociedad los beneficios de tecnologías nacidas de fondos públicos?</h4>
+                        <p class="mt-2 text-gray-600">Se reconoce que grandes avances como Internet o el GPS comenzaron con inversión pública, pero hoy son explotados por el sector privado. La solución es un sistema de impuestos donde las empresas, al crecer, pagan más, retornando el beneficio a la sociedad. Sin embargo, esto solo funciona si el Estado aplica una estricta regulación antimonopolio para asegurar que el mercado redistribuya los beneficios, en lugar de intervenir directamente.</p>
+                    </div>
+                    <!-- Tarjeta 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h4 class="font-bold text-gray-800">¿Cómo regular tecnologías que cambian mes a mes sin asfixiar la innovación?</h4>
+                        <p class="mt-2 text-gray-600">En lugar de leyes rígidas, el Estado debe usar una "regulación por objetivos", estableciendo metas claras y predecibles (por ejemplo, en seguridad) y dando libertad a las empresas sobre cómo alcanzarlas. Esto se puede complementar con estímulos como períodos de gracia fiscal para nuevas empresas, fomentando un ecosistema de innovación estable y evitando la fuga de capitales.</p>
+                    </div>
+                    <!-- Tarjeta 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h4 class="font-bold text-gray-800">¿Cuál es la mejor estrategia frente a la automatización que amenaza el empleo?</h4>
+                        <p class="mt-2 text-gray-600">La solución no es frenar la tecnología ni un "impuesto a los robots", sino transformar la fuerza laboral. El Estado debe incentivar masivamente la educación y capacitación para nuevos roles, ofrecer beneficios fiscales a empresas que contraten personal en lugar de automatizar ciertas tareas y evitar la tercerización externa de empleos calificados para fortalecer la economía local.</p>
+                    </div>
+                    <!-- Tarjeta 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h4 class="font-bold text-gray-800">Para un país en desarrollo, ¿qué significa realmente tener "soberanía tecnológica"?</h4>
+                        <p class="mt-2 text-gray-600">Dado que la soberanía en hardware (fabricar chips) es inalcanzable, el camino viable es el desarrollo de capital intelectual. La soberanía se logra a través del diseño y la creación de software y propiedad intelectual local, evitando depender de las decisiones y actualizaciones de gigantes extranjeros. Esto permite un "escudo" de protección tecnológica sin necesidad de producir todo el hardware.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 4: CIERRE -->
+            <!-- <section id="cierre" class="mb-24">
+                <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-sky-500 pb-2 mb-6">
+                    Entonces, ¿Cuál triángulo representa más lo que pasa hoy?
+                </h2>
+                <div class="text-center">
+                    <p class="text-lg text-gray-600">Muestra comparativa final de los triángulos.</p>-->
+                    <!-- Aca podria ir un visualizador de imagenes o un carrusel -->
+                <!--</div>
+            </section> -->
+
+            <!-- Pie de Página -->
+            <footer class="text-center text-gray-500 pt-8 border-t">
+                <p>Recopilación de datos para presentación. Investigación No experimental.</p>
+                <p class="mt-2">Créditos: Yiany Suriel</p>
+                <p class="mt-2">Invitado especial: [Nombre del invitado]</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        // Lógica para los botones de "revelación"
+        function toggleVisibility(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.classList.toggle('hidden');
+            }
+        }
+    </script>
+    <script src="script.js"></script> <!-- Dejamos este para la lógica del carrusel -->
+</body>
+</html>
