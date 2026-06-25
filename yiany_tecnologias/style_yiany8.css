@@ -131,12 +131,17 @@ ul {
     margin-bottom: 4rem;
 }
 
+.slider-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .grid-triangulos {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    transition: transform 0.5s ease-in-out;
 }
 
 .triangulo-item {
@@ -150,6 +155,50 @@ ul {
 .triangulo-item img {
     max-width: 100%;
     height: auto;
+}
+
+.slider-btn {
+    display: none; /* Oculto en desktop */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(33, 37, 41, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 1;
+}
+
+.slider-btn.prev {
+    left: 1rem;
+}
+
+.slider-btn.next {
+    right: 1rem;
+}
+
+.slider-dots {
+    display: none; /* Oculto en desktop */
+}
+
+.slider-dots span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-dots span.active {
+    background-color: var(--color-primario);
 }
 
 /* --- SECCIÓN 3: Relaciones --- */
@@ -351,8 +400,27 @@ footer p:nth-of-type(2) {
 
 /* --- Adaptación para Tablets (Pantallas medianas) --- */
 @media (max-width: 992px) {
+    /* --- SLIDER TRIANGULO --- */
+    .slider-container {
+        overflow: hidden;
+    }
+
     .grid-triangulos {
-        grid-template-columns: 1fr; /* Pasa a 1 columna antes */
+        display: flex;
+    }
+
+    .triangulo-item {
+        flex: 0 0 100%;
+    }
+
+    .slider-btn {
+        display: block;
+    }
+
+    .slider-dots {
+        display: block;
+        text-align: center;
+        padding-top: 1.5rem;
     }
     
     .titulo-container h1 {

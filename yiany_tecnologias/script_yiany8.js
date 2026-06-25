@@ -80,4 +80,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* =========================================
+       Paso Final: Lógica para el Carrusel Adaptable
+    ========================================= */
+
+    const slider = document.querySelector('.grid-triangulos');
+    const slides = document.querySelectorAll('.triangulo-item');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
+    const dotsContainer = document.querySelector('.slider-dots');
+
+    if (slider && slides.length > 0) {
+        let currentIndex = 0;
+        let dots = [];
+
+        // Crear los puntos de navegación
+        slides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.addEventListener('click', () => {
+                currentIndex = i;
+                updateSlider();
+            });
+            dotsContainer.appendChild(dot);
+            dots.push(dot);
+        });
+
+        const updateSlider = () => {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        };
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
+
+        updateSlider(); // Inicializar el slider
+    }
 });
