@@ -64,4 +64,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    /* =========================================
+       Paso Adicional: Lógica para Respuestas Desplegables
+    ========================================= */
+
+    const toggleButtons = document.querySelectorAll('.toggle-respuesta');
+
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.dataset.target;
+            const targetContent = document.getElementById(targetId);
+
+            button.classList.toggle('active');
+            targetContent.classList.toggle('is-visible');
+        });
+    });
+
 });
